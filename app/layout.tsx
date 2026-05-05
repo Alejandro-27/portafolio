@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   icons: {
       // Apunta a tu nuevo archivo para el icono estándar
       icon: '/apple-icon.png', 
-      // También lo mantenemos para dispositivos Apple
+      // También lo mantenemos para dispositivos Apple 
       apple: '/apple-icon.png',
     },
   }
