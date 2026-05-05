@@ -23,8 +23,7 @@ export const metadata: Metadata = {
       icon: '/apple-icon.png', 
       // También lo mantenemos para dispositivos Apple 
       apple: '/apple-icon.png',
-    },
-  }
+    }
 }
 
 export const viewport: Viewport = {
