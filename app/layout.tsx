@@ -19,22 +19,12 @@ export const metadata: Metadata = {
   keywords: ['Backend Developer', 'Full-Stack', 'Node.js', 'Django', 'Python', 'React', 'Linux'],
   authors: [{ name: 'Alejandro' }],
   icons: {
-    icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
-    apple: '/apple-icon.png',
-  },
+      // Apunta a tu nuevo archivo para el icono estándar
+      icon: '/apple-icon.png', 
+      // También lo mantenemos para dispositivos Apple
+      apple: '/apple-icon.png',
+    },
+  }
 }
 
 export const viewport: Viewport = {
