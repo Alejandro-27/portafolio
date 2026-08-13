@@ -1,35 +1,40 @@
 import type { Metadata, Viewport } from 'next'
 import { Inter, Geist_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
+import { ThemeProvider } from '@/components/theme-provider'
 import './globals.css'
 
-const inter = Inter({ 
+const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-inter"
+  variable: "--font-inter",
+  display: "swap",
 });
-const geistMono = Geist_Mono({ 
+const geistMono = Geist_Mono({
   subsets: ["latin"],
-  variable: "--font-geist-mono"
+  variable: "--font-geist-mono",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: 'Alejandro | Backend Specialist & Systems Optimizer',
-  description: 'Full-Stack Developer especializado en Backend, arquitecturas escalables y despliegue eficiente. Experto en Node.js, Django, Python y administración de sistemas Linux.',
-  generator: 'v0.app',
-  keywords: ['Backend Developer', 'Full-Stack', 'Node.js', 'Django', 'Python', 'React', 'Linux'],
-  authors: [{ name: 'Alejandro' }],
+  title: 'Alejandro Gómez | Full-Stack & Backend Specialist',
+  description:
+    'Full-Stack Developer especializado en Backend, arquitecturas escalables, APIs y DevOps. Experto en Node.js, TypeScript, Django, Docker y administración de sistemas Linux.',
+  generator: 'Next.js',
+  keywords: [
+    'Backend Developer', 'Full-Stack', 'Node.js', 'TypeScript', 'Django',
+    'Python', 'React', 'Docker', 'DevOps', 'Linux', 'APIs',
+  ],
+  authors: [{ name: 'Alejandro Gómez', url: 'https://github.com/Alejandro-27' }],
   icons: {
-      // Apunta a tu nuevo archivo para el icono estándar
-      icon: '/apple-icon.png', 
-      // También lo mantenemos para dispositivos Apple 
-      apple: '/apple-icon.png',
-    }
+    icon: '/icon.svg',
+    apple: '/apple-icon.png',
+  },
 }
 
 export const viewport: Viewport = {
-  themeColor: '#0a0f1a',
   width: 'device-width',
   initialScale: 1,
+  themeColor: '#ffffff',
 }
 
 export default function RootLayout({
@@ -38,10 +43,17 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="es" className="dark bg-background">
+    <html lang="es" suppressHydrationWarning>
       <body className={`${inter.variable} ${geistMono.variable} font-sans antialiased`}>
-        {children}
-        {process.env.NODE_ENV === 'production' && <Analytics />}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+          {process.env.NODE_ENV === 'production' && <Analytics />}
+        </ThemeProvider>
       </body>
     </html>
   )
