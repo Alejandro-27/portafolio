@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
-import Image from "next/image"
+
 
 const technologyCategories = [
   {
@@ -130,13 +130,12 @@ export function TechStack() {
                     title={tech.name}
                   >
                     <div className="absolute -inset-1 rounded-xl bg-teal-500/5 opacity-0 group-hover:opacity-100 blur transition-opacity duration-300" />
-                    <Image
+                    <img
                       src={tech.badge}
                       alt={tech.name}
-                      width={160}
-                      height={40}
                       className="h-10 w-auto object-contain filter grayscale-[0.3] group-hover:grayscale-0 transition-all duration-300 group-hover:brightness-110"
                       loading="lazy"
+                      decoding="async"
                     />
                   </div>
                 ))}
