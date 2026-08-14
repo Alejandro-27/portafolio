@@ -26,8 +26,8 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: 'Alejandro Gómez', url: 'https://github.com/Alejandro-27' }],
   icons: {
-    icon: '/icon.svg',
-    apple: '/apple-icon.png',
+    icon: '/favicon.png',
+    apple: '/favicon.png',
   },
 }
 
